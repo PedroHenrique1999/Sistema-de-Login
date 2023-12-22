@@ -1,13 +1,16 @@
 import java.util.Scanner;
 
 public class SistemaDeLogin {
-    public static void main(String[] args) {
-        // Nome de usuário e senha válidos
-        String usuarioValido = "usuario";
-        String senhaValida = "senha123";
+    public static void main (String[] args) {
+    // Nome de usuário e senha válidos
+    String usuarioValido = "usuario";
+    String senhaValida = "senha123";
 
-        Scanner scanner = new Scanner(System.in);
+    Scanner scanner = new Scanner(System.in);
 
+    boolean loginSucesso = false;
+
+    while (!loginSucesso) {
         System.out.println("Nome de usuário: ");
         String usuarioDigitado = scanner.nextLine();
 
@@ -15,11 +18,13 @@ public class SistemaDeLogin {
         String senhaDigitada = scanner.nextLine();
 
         if (usuarioDigitado.equals(usuarioValido) && senhaDigitada.equals(senhaValida)) {
+        loginSucesso = true;
             System.out.println("Login bem-sucedido! Bem-vindo " + usuarioDigitado + ".");
         } else {
-            System.out.println("Nome de usuário ou senha incorretos. Tente novamente.");
+            System.out.println("Nome de usuário ou senha incorretos. Tente Novemante.");
+            }
         }
-
+    
         scanner.close();
     }
 }
